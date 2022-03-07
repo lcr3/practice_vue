@@ -1,0 +1,81 @@
+<html>
+<head>でんたく</head>
+<title>でんたく</title>
+
+<body>
+  <form name="dentaku">
+    <table>
+      <!-- 液晶画面部分 -->
+      <tr>
+        <td colspan="4">
+          <input type="text" class="display" name="display" value="" disabled>
+        </td>
+      </tr>
+
+      <!-- 上から1段目（7~9＋÷） -->
+      <tr>
+        <td><input type="button" value="7" onclick="get_calc(this)"></td>
+        <td><input type="button" value="8" onclick="get_calc(this)"></td>
+        <td><input type="button" value="9" onclick="get_calc(this)"></td>
+        <td><input type="button" value="÷" class="operator" name="div_btn" onclick="get_calc(this)"></td>
+      </tr>
+
+      <!-- 上から2段目（4~6＋×） -->
+      <tr>
+        <td><input type="button" value="4" onclick="get_calc(this)"></td>
+        <td><input type="button" value="5" onclick="get_calc(this)"></td>
+        <td><input type="button" value="6" onclick="get_calc(this)"></td>
+        <td><input type="button" value="×" class="operator" name="multi_btn" onclick="get_calc(this)"></td>
+      </tr>
+
+      <!-- 上から3段目（1~3＋-） -->
+      <tr>
+        <td><input type="button" value="1" onclick="get_calc(this)"></td>
+        <td><input type="button" value="2" onclick="get_calc(this)"></td>
+        <td><input type="button" value="3" onclick="get_calc(this)"></td>
+        <td><input type="button" value="-" class="operator" onclick="get_calc(this)"></td>
+      </tr>
+
+      <!-- 上から4段目（0/C/=/+) -->
+      <tr>
+        <td><input type="button" value="0" onclick="get_calc(this)"></td>
+        <td><input type="button" value="C" onclick="get_calc(this)"></td>
+        <td><input type="button" value="=" class="equal" onclick="get_calc(this)"></td>
+        <td><input type="button" value="+" class="operator" onclick="get_calc(this)"></td>
+      </tr>
+
+    </table>
+  </form>
+  <script>
+    var displayMultiply = "×";
+    var multiply = "*";
+    var displayDivision = "÷";
+    var division = "/";
+    var equal = "=";
+    var clear = "C";
+
+    function get_calc(btn) {
+      if (btn.value == equal) {
+        document.dentaku.display.value = eval(document.dentaku.display.value);
+        // document.dentaku.display.value = mathEval(document.dentaku.display.value);
+      } else if (btn.value == clear) {
+        document.dentaku.display.value = "";
+      } else {
+        if (btn.value == displayMultiply) {
+          btn.value = multiply;
+        } else if (btn.value == displayDivision) {
+          btn.value = division;
+        }
+        document.dentaku.display.value += btn.value;
+        document.dentaku.multi_btn.value = displayMultiply;
+        document.dentaku.div_btn.value = displayDivision;
+      }
+    }
+
+    function mathEval(expr) {
+      return Function('return Math.' + expr);
+    }
+  </script>
+</body>
+
+</html>
