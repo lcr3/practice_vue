@@ -7,7 +7,7 @@ let clear = "C";
 
 /**
  * 入力されたボタンの処理を実行し、結果を表示する
- * @type{button_object}
+ * @type {button_object}
 */
 function button_tapped(btn) {
   if (btn.value == equal) {
