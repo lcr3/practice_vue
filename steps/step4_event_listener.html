@@ -1,0 +1,26 @@
+<html>
+<head>Step4</head>
+<title>ボタンのクリックにリスナー関数を2つ登録する</title>
+<body>
+  <input type="button" value="くりっくして" id="myBtn">
+
+  <script>
+    function clickListener1(event) {
+      var objId = event.target.id;
+      console.log("1: " + objId + "クリックされた");
+    }
+
+    function clickListener2(event) {
+      var objId = event.target.id;
+      console.log("2: " + objId + "クリックされた");
+    }
+
+    var myBtn = document.getElementById("myBtn");
+    // ボタンに二つのイベントを登録する
+    myBtn.addEventListener("click", clickListener1, false);
+    myBtn.addEventListener("click", clickListener2, false);
+    // 最後の引数はイベントを検出するターゲットフェイズを指定している
+    // キャプチャリングフェーズ(true)とバブリングフェーズ(false)
+  </script>
+</body>
+</html>
