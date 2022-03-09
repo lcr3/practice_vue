@@ -6,7 +6,13 @@
   <style>
     #myImage {
       width: 180px;
-      top: 300px;
+      height: 180px;
+      top: 0px;
+      left: 0px;
+      /* これがないと動かせない */
+      position: absolute;
+      /* アニメーション */
+      transition: all 1s;
     }
   </style>
   <div id="mainDiv">
@@ -15,8 +21,6 @@
 
   <script>
     let img = document.getElementById("myImage");
-    // 動かなかったが、↓追加で動くようになった
-    img.style.position = "absolute";
     let imageHeight = parseInt(img.height);
     let imageWidth = parseInt(img.width);
 
