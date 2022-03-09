@@ -1,0 +1,37 @@
+<html>
+<head>Step4</head>
+<title>要素の操作</title>
+
+<body>
+  <style>
+    #myImage {
+      width: 180px;
+      top: 300px;
+    }
+  </style>
+  <div id="mainDiv">
+    <img id="myImage" src="images/tea.png">
+  </div>
+
+  <script>
+    let img = document.getElementById("myImage");
+    // 動かなかったが、↓追加で動くようになった
+    img.style.position = "absolute";
+    let imageHeight = parseInt(img.height);
+    let imageWidth = parseInt(img.width);
+
+    // imageを移動する関数
+    function moveImg(event) {
+      let moveWidth = (event.clientX - (imageWidth / 2)) + "px";
+      let moveHeight = (event.clientY - (imageHeight / 2)) + "px"; 
+      
+      img.style.left = moveWidth;
+      img.style.top = moveHeight;
+    }
+
+    // 背景部分をクリックしたときのイベントリスナー
+    document.addEventListener("click", moveImg, false);
+  </script>
+</body>
+</html>
+
