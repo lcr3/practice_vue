@@ -1,0 +1,30 @@
+<html>
+<head>Step5</head>
+<title>Objectの操作</title>
+
+<body>
+  <script>
+
+    let customer1 = new Customer(1, "桜田一郎");
+    let customer2 = new Customer(2, "山田花子");
+    // customer1["number"] = 3;
+    customer1.number = 3;
+    customer1.showInfo();
+
+    // Customerのコンストラクタ
+    function Customer(num, name) {
+      this.number = num;
+      this.name = name;
+
+      this.showInfo = function() {
+        console.log(
+          "番号:", this.number,
+          " 名前:", this.name,
+        );
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!-- 参照しているテキストがが古いので違和感があるところ、警告が出るところは適宜調べて修正している -->
