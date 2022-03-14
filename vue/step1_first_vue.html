@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <!-- 読み込むだけで使える,プロトタイングや学習のとき使う -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+    </div>
+    <script>
+      // Vueインスタンスを作成
+      new Vue({
+        // dataを流し込むid要素
+        el: "#app",
+        data: {
+          // 指定したidに要素を入れる
+          message: "Hello World!"
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
