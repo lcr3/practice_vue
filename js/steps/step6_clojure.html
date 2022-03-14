@@ -1,0 +1,30 @@
+<html>
+<head>Step6</head>
+<title>クロージャ</title>
+
+<body>
+  <input type="button" value="ニュース" id="news">
+  <input type="button" value="天気" id="weather">
+  <input type="button" value="検索" id="search">
+
+  <script>
+  var links = {
+      "search": "https://google.co.jp/",
+      "weather": "https://weather.yahoo.co.jp/",
+      "news": "https://www.asahi.com"
+  }
+
+  function makeLink() {
+    var loc = links[key];
+    return function() {
+      location.href = loc;
+    }
+  }
+  var btn;
+  for (key in links) {
+    btn = document.getElementById(key);
+    btn.onclick = makeLink();
+  }
+  </script>
+</body>
+</html>
