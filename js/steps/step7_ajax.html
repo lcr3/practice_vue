@@ -1,0 +1,21 @@
+<html>
+<head>Step7</head>
+<title>非同期通信</title>
+
+<body>
+
+
+  <script>
+    var request = new XMLHttpRequest();
+    var path = "data.txt";
+    request.responseType = "text";
+    // method: string, url: string | URL, async : boolean 
+    request.open("GET", path, true);
+    request,addEventListener("load", function (event) {
+      // 受け取ったデータを処理する
+      console.log(event);
+    });
+    request.send(null);
+  </script>
+</body>
+</html>
