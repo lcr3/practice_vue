@@ -1,19 +1,27 @@
 <html>
 <head>Step7</head>
-<title>非同期通信</title>
+<title>Ajaxのテスト</title>
 
 <body>
-
+  <h1>Ajaxのテスト</h1>
+  <input type="button" id="myBtn" value="ロード">
 
   <script>
-    var request = new XMLHttpRequest();
-    var path = "data.txt";
+    let request = new XMLHttpRequest();
+    let path = "data.txt";
+    let finishGetRequestState = 4;
+    let successRequestCode = 200;
+
     request.responseType = "text";
     // method: string, url: string | URL, async : boolean 
     request.open("GET", path, true);
     request,addEventListener("load", function (event) {
       // 受け取ったデータを処理する
-      console.log(event);
+      if (event.target.readyState == finishGetRequestState && event.target.status == successRequestCode) {
+        document.getElementById("myArea").innerHTML = event.target.responseText;
+      } else {
+        console.log("読み込み失敗");
+      }
     });
     request.send(null);
   </script>
