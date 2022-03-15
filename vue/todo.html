@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ToDoアプリ</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <h1>ToDo アプリ</h1>
+    <div id="app">
+      <div class="new-todo-item">
+        <label for="new-todo-title">タイトル</label>
+        <input type="text" v-model="todoTitle" id="new-todo-title">
+      </div>
+      <div class="new-todo-item">
+        <label for="new-todo-description">説明</label>
+        <textarea v-model="todoDescription" id="new-todo-description"></textarea>
+      </div>
+    </div>
+    <script src="./js/step2.js"></script>
+  </body>
+</html>
