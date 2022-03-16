@@ -33,12 +33,12 @@
         カテゴリ
         <form @submit.prevent="createCategory">
           <input v-model.trim="categoryName" type="text">
-          <button type="submit">作成</button>
+          <button type="submit" :disabled="!canCreateCategory">作成</button>
         </form>
       </div>
       <div class="new-todo-action">
         <form id="from-todo" @submit.prevent="createTodo">
-          <button type="submit">作成</button>
+          <button type="submit" :disabled="!canCreateTodo">作成</button>
         </form>
       </div>
     </div>

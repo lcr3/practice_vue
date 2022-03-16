@@ -27,7 +27,7 @@ Vue.createApp({
     },
   },
   watch: { // 監視
-    todos: {
+    todos: { // todosに変更があったとき、handlerが実行される
       handler: function (next) {
         window.localStorage.setItem('todos', JSON.stringify(next))
       },
