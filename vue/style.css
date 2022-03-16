@@ -1,0 +1,8 @@
+.new-todo {
+  border: 2px solid #8e8d8d;
+  padding: 10px;
+}
+
+.new-todo-item label {
+  margin-right: 20px;
+}
