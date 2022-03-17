@@ -25,6 +25,9 @@ Vue.createApp({
       const categoryName = this.categoryName
       return this.categories.indexOf(categoryName) !== -1
     },
+    hasTodos: function() {
+      return this.todos.length > 0
+    }
   },
   watch: { // 監視
     todos: { // todosに変更があったとき、handlerが実行される
