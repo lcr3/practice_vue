@@ -31,6 +31,13 @@
       </div>
       <div calss="new-todo-category">
         カテゴリ
+        <ul>
+          <li v-for="category in categories" :key="category">
+            <label :for="'category-' + category">
+              <input v-model="todoCategories" type="checkbox" :id="'category-' + category" :value="category" form="from-todo"> {{ category }}
+            </label>
+          </li>
+        </ul>
         <form @submit.prevent="createCategory">
           <input v-model.trim="categoryName" type="text">
           <button type="submit" :disabled="!canCreateCategory">作成</button>

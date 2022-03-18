@@ -62,7 +62,6 @@ Vue.createApp({
       if (!this.canCreateCategory) {
         return
       }
-
       // カテゴリーを追加する処理
       this.categories.push(this.categoryName)
       // 初期化
@@ -80,6 +79,7 @@ Vue.createApp({
     }
     if (categories) {
       this.categories = JSON.parse(categories)
+      console.log(this.categories)
     }
   },
 }).mount('#app')
