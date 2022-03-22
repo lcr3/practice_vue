@@ -73,6 +73,11 @@
         </div>
       </div>
       <ul v-if="hasTodos" class="todo-list">
+        <ul v-if="(todo, index) in resultTodos" :key="todo.id" class="todo-item">
+          <div class="todo-item-done">
+            <input v-model="todo.done" type="checkbox">
+          </div>
+        </ul>
       </ul>
       <p v-else>ToDoタスクはまだ登録されていません</p>
     </div>
