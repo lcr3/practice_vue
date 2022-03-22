@@ -61,8 +61,9 @@ Vue.createApp({
     },
   },
   methods: { // メソッドたち
-    createTodo: function () {
+    createTodo: function() {
       if (!this.canCreateTodo) {
+        console.log("作成できませんでした")
         return
       }
 
@@ -80,8 +81,9 @@ Vue.createApp({
       this.todoTitle = ''
       this.todoDescription = ''
       this.todoCategories = []
+      console.log("作成成功" + this.todos.length)
     },
-    createCategory: function () {
+    createCategory: function() {
       if (!this.canCreateCategory) {
         return
       }

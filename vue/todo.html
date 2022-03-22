@@ -52,6 +52,13 @@
     <div>
       <div class="todo-search">
         <div class="todo-search-item">
+          <label for="todo-searcu-category">カテゴリでフィルタ</label>
+          <select v-model="selectedCategory" id="todo-search-category">
+            <option value="">指定なし</option>
+            <option v-for="category in categories" :key="category" :value="category">{{ category}}</option>
+          </select>
+        </div>
+        <div class="todo-search-item">
           <label for="todo-search-done">
             終了したものを非表示にする
             <input 
@@ -73,11 +80,25 @@
         </div>
       </div>
       <ul v-if="hasTodos" class="todo-list">
-        <ul v-if="(todo, index) in resultTodos" :key="todo.id" class="todo-item">
+        <li v-for="(todo, index) in resultTodos" :key="todo.id" class="todo-item">
           <div class="todo-item-done">
             <input v-model="todo.done" type="checkbox">
           </div>
-        </ul>
+          <div class="todo-item-content">
+            <div class="todo-item-date">
+              {{ new Date(todo.dateTime).toString() }}
+            </div>
+            <h3 class="todo-item-title"> {{ todo.title }}</h3>
+            <div v-if="todo.description" class="todo-item-description">
+              {{ todo.description }}
+            </div>
+            <ul class="todo-item-categories" v-if="todo.categories.length > 0">
+              <li v-for="category in todo.categories" :key="category" class="todo-item-category">
+                {{ category }}
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
       <p v-else>ToDoタスクはまだ登録されていません</p>
     </div>
