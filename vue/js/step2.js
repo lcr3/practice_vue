@@ -1,5 +1,34 @@
+// コンポーネント
+const todoItem = {
+  template: '#template-todo-item',
+  props: {
+    todo: {
+      type: Object,
+      required: true,
+    },
+    done: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  computed: {
+    hasCategories: function() {
+      return this.todo.categories.length > 0
+    },
+  },
+  methods: {
+    onChangeTodo: function($event) {
+      // 親にイベントを発火
+      this.$emit('update:done', $event.target.checked)
+    }
+  }
+}
+
 // Vueインスタンスを作成
 Vue.createApp({
+  components: {  // コンポーネント
+    'todo-item': todoItem,
+  },
   data() { // プロパティ
     return {
       todoTitle: '',
@@ -33,6 +62,7 @@ Vue.createApp({
         return true
       })
       .filter(function(todo) {
+        console.log(todo)
         return (
           todo.title.indexOf(searchWord) !== -1 || todo.description.indexOf(searchWord) !== -1
         )
