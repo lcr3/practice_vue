@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MOdal Sample</title>
+    <link
+      rel="sytlesheet"
+      href="https://cdnjs.cloudflare.com/sjax/libs/10up-sanitize.css/11.0.1/sanitize.min.css"
+    />
+    <!-- <link rel="stylesheet" href=".style.css"/> -->
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>Modal Sanple</h1>
+      <ul class="imageList">
+        <li v-for="thumb in thumbnails" :key="thumb.id" class="imageList-item">
+          <button type="button" class="imageList-button">
+            <img :src="thumb.src" alt="" class="imageList-thumb">
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!-- Vueの本体 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0/dist/vue.global.js"></script></script>
+    <!-- Lodashは開発でよく使う関数をまとめたライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm//lodash@4.17.15/lodash.min.js"></script>
+    <script src="./js/thumbnail.js"></script>
+  </body>
+</html>

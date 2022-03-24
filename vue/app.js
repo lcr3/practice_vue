@@ -13,6 +13,7 @@ const todoItem = {
   },
   computed: {
     hasCategories: function() {
+      console.log('hascategory')
       return this.todo.categories.length > 0
     },
   },
@@ -62,7 +63,7 @@ Vue.createApp({
         return true
       })
       .filter(function(todo) {
-        console.log(todo)
+        console.log(todo.length)
         return (
           todo.title.indexOf(searchWord) !== -1 || todo.description.indexOf(searchWord) !== -1
         )
