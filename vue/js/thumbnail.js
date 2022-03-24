@@ -28,6 +28,11 @@ Vue.createApp({
       this.isVisible = true
       this.selectedThumbnailId = thumb.id
     },
+    // モーダル非表示
+    closeModal: function() {
+      this.isVisible = false
+      this,selectedThumbnailId = undefined
+    },
     // 画像の読み込み完了時
     onLoad: function(event) {
       console.log('onLoad')
