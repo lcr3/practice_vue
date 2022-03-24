@@ -2,19 +2,18 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>MOdal Sample</title>
+    <title>Modal Sample</title>
     <link
       rel="sytlesheet"
       href="https://cdnjs.cloudflare.com/sjax/libs/10up-sanitize.css/11.0.1/sanitize.min.css"
     />
-    <!-- <link rel="stylesheet" href=".style.css"/> -->
   </head>
   <body>
     <div id="app" class="container">
       <h1>Modal Sanple</h1>
       <ul class="imageList">
         <li v-for="thumb in thumbnails" :key="thumb.id" class="imageList-item">
-          <button type="button" class="imageList-button">
+          <button type="button" class="imageList-button" @click="openModal(thumb)">
             <img :src="thumb.src" alt="" class="imageList-thumb">
           </button>
         </li>

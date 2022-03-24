@@ -16,5 +16,10 @@ Vue.createApp({
           }
       ]
     }
+  },
+  methods: {
+    openModal: function(thumb) {
+      console.log(thumb)
+    }
   }
 }).mount("#app")
