@@ -18,6 +18,24 @@
           </button>
         </li>
       </ul>
+      <div class="modal-container" v-show="isVisible">
+        <div class="modal-overlay">
+          <div class="modal-body" v-if="currentThumbnail !== undefined">
+            <div
+              class="modal-image-container"
+              :class="{'isLoaded': isThumbnailLoaded}"
+            >
+              <div :style="containerStyle">
+                <img
+                  :src="currentThumbnail.src"
+                  alt=""
+                  class="modal-image"
+                  @load.prevent.stop="onLoad"
+                />
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Vueの本体 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0/dist/vue.global.js"></script></script>
