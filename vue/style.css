@@ -7,7 +7,7 @@
   margin-right: 20px;
 }
 
-.modal-container{
+.modal-container {
   /*　要素を重ねた時の順番　*/
   z-index:1;
 
@@ -23,4 +23,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.imageList li {
+  display: inline;
+  margin: 20px;
 }
